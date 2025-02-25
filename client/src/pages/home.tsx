@@ -17,7 +17,7 @@ export default function Home() {
             opacity: 0.1
           }}
         />
-        
+
         <div className="container mx-auto px-4 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,11 +26,11 @@ export default function Home() {
             className="max-w-3xl"
           >
             <AnimatedText
-              text="Crafting Stories That Inspire"
+              text="Tworzenie inspirujących historii"
               className="text-5xl md:text-7xl font-bold mb-6"
             />
             <AnimatedText
-              text="Award-winning author bringing imagination to life through compelling narratives and unforgettable characters."
+              text="Nagradzany autor, który ożywia wyobraźnię poprzez wciągające narracje i niezapomniane postacie."
               className="text-xl md:text-2xl text-muted-foreground mb-8"
               delay={0.4}
             />
@@ -41,12 +41,12 @@ export default function Home() {
             >
               <Link href="/books">
                 <Button size="lg" className="mr-4">
-                  Explore Books
+                  Odkryj książki
                 </Button>
               </Link>
               <Link href="/contact">
                 <Button variant="outline" size="lg">
-                  Get in Touch
+                  Skontaktuj się
                 </Button>
               </Link>
             </motion.div>

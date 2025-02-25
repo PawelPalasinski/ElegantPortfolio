@@ -27,15 +27,15 @@ export default function Contact() {
     },
     onSuccess: () => {
       toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon."
+        title: "Wiadomość wysłana!",
+        description: "Dziękuję za kontakt. Odpowiem najszybciej jak to możliwe."
       });
       form.reset();
     },
     onError: () => {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
+        title: "Błąd",
+        description: "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
         variant: "destructive"
       });
     }
@@ -46,11 +46,11 @@ export default function Contact() {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <AnimatedText
-            text="Get in Touch"
+            text="Kontakt"
             className="text-4xl md:text-5xl font-bold text-center mb-4"
           />
           <AnimatedText
-            text="Have a question or want to collaborate? Send me a message."
+            text="Masz pytanie lub chcesz nawiązać współpracę? Napisz do mnie."
             className="text-xl text-muted-foreground text-center mb-16"
             delay={0.2}
           />
@@ -65,9 +65,9 @@ export default function Contact() {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Imię</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your name" {...field} />
+                      <Input placeholder="Twoje imię" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -81,7 +81,7 @@ export default function Contact() {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input type="email" placeholder="your@email.com" {...field} />
+                      <Input type="email" placeholder="twoj@email.com" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -93,10 +93,10 @@ export default function Contact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel>Wiadomość</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Write your message here..."
+                        placeholder="Napisz swoją wiadomość tutaj..."
                         className="min-h-[150px]"
                         {...field}
                       />
@@ -111,7 +111,7 @@ export default function Contact() {
                 className="w-full"
                 disabled={mutation.isPending}
               >
-                {mutation.isPending ? "Sending..." : "Send Message"}
+                {mutation.isPending ? "Wysyłanie..." : "Wyślij wiadomość"}
               </Button>
             </form>
           </Form>

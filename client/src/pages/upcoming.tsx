@@ -5,15 +5,15 @@ import { Calendar } from "lucide-react";
 
 const upcomingReleases = [
   {
-    title: "The Winter's Tale",
-    date: "Coming Fall 2024",
-    description: "A mysterious journey through the snow-covered landscapes of Norway",
+    title: "Zimowa Opowieść",
+    date: "Jesień 2024",
+    description: "Tajemnicza podróż przez ośnieżone krajobrazy Norwegii",
     imageUrl: "https://images.unsplash.com/photo-1487088678257-3a541e6e3922"
   },
   {
-    title: "Echoes of Tomorrow",
-    date: "Coming Winter 2024",
-    description: "A sci-fi thriller that questions the nature of reality",
+    title: "Echa Jutra",
+    date: "Zima 2024",
+    description: "Thriller sci-fi, który kwestionuje naturę rzeczywistości",
     imageUrl: "https://images.unsplash.com/photo-1645785328498-fc3483dc7b2d"
   }
 ];
@@ -23,15 +23,15 @@ export default function Upcoming() {
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
         <AnimatedText
-          text="Upcoming Releases"
+          text="Nadchodzące Premiery"
           className="text-4xl md:text-5xl font-bold text-center mb-4"
         />
         <AnimatedText
-          text="Get a sneak peek at what's coming next"
+          text="Zobacz, co pojawi się wkrótce"
           className="text-xl text-muted-foreground text-center mb-16"
           delay={0.2}
         />
-        
+
         <div className="max-w-4xl mx-auto grid gap-8">
           {upcomingReleases.map((release, index) => (
             <motion.div
