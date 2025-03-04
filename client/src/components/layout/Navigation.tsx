@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,8 +10,7 @@ const links = [
   { href: "/about", label: "O mnie" },
   { href: "/books", label: "Książki" },
   { href: "/upcoming", label: "Nadchodzące" },
-  { href: "/contact", label: "Kontakt" },
-  { href: "/gallery", label: "Galeria" }, // Added gallery link
+  { href: "/contact", label: "Kontakt" }
 ];
 
 export function Navigation() {
@@ -20,21 +18,21 @@ export function Navigation() {
   const [location] = useLocation();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-primary/30"> {/* Updated Navigation Style */}
+    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <span className="text-2xl font-bold text-primary cursor-pointer">Autor</span>
+          <a className="text-2xl font-bold">Autor</a>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
-              <span className={`hover:text-primary transition-colors cursor-pointer ${
+              <a className={`hover:text-primary transition-colors ${
                 location === link.href ? "text-primary" : "text-muted-foreground"
               }`}>
                 {link.label}
-              </span>
+              </a>
             </Link>
           ))}
           <ThemeToggle />
@@ -61,14 +59,14 @@ export function Navigation() {
             <div className="py-4 px-4 space-y-4 bg-background border-b">
               {links.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <span
-                    className={`block py-2 cursor-pointer ${
+                  <a
+                    className={`block py-2 ${
                       location === link.href ? "text-primary" : "text-muted-foreground"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
-                  </span>
+                  </a>
                 </Link>
               ))}
             </div>
@@ -78,5 +76,3 @@ export function Navigation() {
     </nav>
   );
 }
-
-export default Navigation;
