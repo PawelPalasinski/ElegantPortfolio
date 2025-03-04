@@ -30,8 +30,8 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen relative"> {/* Removed unnecessary classes */}
-        <BackgroundImage /> {/* Added BackgroundImage component */}
+      <div className="min-h-screen relative bg-background text-foreground">
+        <BackgroundImage />
         <Navigation />
         <main className="pt-16">
           <Router />

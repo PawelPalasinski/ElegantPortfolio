@@ -1,14 +1,10 @@
-
 import React from 'react';
 
 export function BackgroundImage() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/50 z-10"></div>
-      <img 
-        src="/assets/_06cf3223-09ce-4857-98a6-c8b29c1a0fc9.jpg" 
-        alt="Background" 
-        className="w-full h-full object-cover"
+    <div className="fixed inset-0 -z-10">
+      <div
+        className="h-full w-full bg-[radial-gradient(#111_1px,transparent_1px)] dark:bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,#000)] opacity-40 dark:opacity-70"
       />
     </div>
   );
