@@ -27,8 +27,6 @@ function Router() {
   );
 }
 
-import { BackgroundImage } from "./components/ui/background-image";
-
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
