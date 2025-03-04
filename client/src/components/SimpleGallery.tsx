@@ -63,7 +63,7 @@ export default function SimpleGallery() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 backdrop-blur-sm bg-card/60 border border-primary/30"
           >
             <div className="relative aspect-[4/3]">
               <img
@@ -72,8 +72,8 @@ export default function SimpleGallery() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="p-4 bg-card">
-              <h3 className="text-lg font-medium">{image.title}</h3>
+            <div className="p-4 bg-black/40 backdrop-blur-sm">
+              <h3 className="text-lg font-medium text-primary">{image.title}</h3>
               <p className="text-sm text-muted-foreground">{image.description}</p>
             </div>
           </motion.div>

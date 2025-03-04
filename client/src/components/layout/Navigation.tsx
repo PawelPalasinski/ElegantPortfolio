@@ -19,10 +19,10 @@ export function Navigation() {
   const [location] = useLocation();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b">
+    <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-primary/30"> {/* Updated Navigation Style */}
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-bold">Autor</a>
+          <a className="text-2xl font-bold text-primary">Autor</a> {/* Updated Link Style */}
         </Link>
 
         {/* Desktop Navigation */}
