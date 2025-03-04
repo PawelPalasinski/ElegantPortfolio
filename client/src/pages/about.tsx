@@ -16,11 +16,12 @@ export default function About() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              className="aspect-[3/4] relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1499557354967-2b2d8910bcca"
-                alt="Portret autora"
-                className="rounded-lg shadow-lg"
+                src="/attached_assets/_8988a4dc-dd51-447c-b7fb-aa47adb4ed8b.jpeg"
+                alt="Zdjęcie autorki"
+                className="rounded-lg shadow-lg object-cover w-full h-full"
               />
             </motion.div>
 
@@ -32,13 +33,13 @@ export default function About() {
               />
 
               <AnimatedText
-                text="Z ponad dziesięcioletnim doświadczeniem w tworzeniu wciągających narracji, poświęciłem życie sztuce opowiadania historii. Moja praca obejmuje różne gatunki, od fikcji współczesnej po powieści historyczne, każda starannie napisana, by stworzyć niezapomniane doświadczenia dla czytelników."
+                text="Z ponad dziesięcioletnim doświadczeniem w tworzeniu wciągających narracji, poświęciłam życie sztuce opowiadania historii. Moja praca obejmuje różne gatunki, od fikcji współczesnej po powieści historyczne, każda starannie napisana, by stworzyć niezapomniane doświadczenia dla czytelników."
                 className="text-muted-foreground"
                 delay={0.4}
               />
 
               <AnimatedText
-                text="Moja podróż jako autora rozpoczęła się w cichych zakątkach lokalnych bibliotek i przerodziła się w pasję tworzenia światów, w których czytelnicy mogą się zatracić. Każda książka reprezentuje nie tylko historię, ale nową przygodę, nową perspektywę i nowy sposób patrzenia na świat."
+                text="Moja podróż jako autorki rozpoczęła się w cichych zakątkach lokalnych bibliotek i przerodziła się w pasję tworzenia światów, w których czytelnicy mogą się zatracić. Każda książka reprezentuje nie tylko historię, ale nową przygodę, nową perspektywę i nowy sposób patrzenia na świat."
                 className="text-muted-foreground"
                 delay={0.6}
               />
