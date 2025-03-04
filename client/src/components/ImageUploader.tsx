@@ -150,6 +150,6 @@ export function ImageUploader() {
           </div>
         ))}
       </div>
-    </div>
+    </div>div>
   );
 }

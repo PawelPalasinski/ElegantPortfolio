@@ -10,7 +10,7 @@ import Books from "@/pages/books";
 import Upcoming from "@/pages/upcoming";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
-import { ImageUploader } from "@/components/ImageUploader"; // Added import
+import SimpleGallery from "@/components/SimpleGallery";
 
 function Router() {
   return (
@@ -20,7 +20,7 @@ function Router() {
       <Route path="/books" component={Books} />
       <Route path="/upcoming" component={Upcoming} />
       <Route path="/contact" component={Contact} />
-      <Route path="/gallery" component={ImageUploader} /> {/* Added gallery route */}
+      <Route path="/gallery" component={SimpleGallery} />
       <Route component={NotFound} />
     </Switch>
   );
