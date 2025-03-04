@@ -27,6 +27,8 @@ function Router() {
   );
 }
 
+import { BackgroundImage } from "./components/ui/background-image";
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -43,12 +45,3 @@ function App() {
 }
 
 export default App;
-
-//Component for Background Image (needs image path update)
-export const BackgroundImage = () => {
-  return (
-    <div className="absolute inset-0">
-      <img src="/assets/background.jpg" alt="Background" className="w-full h-full object-cover" />
-    </div>
-  );
-};
