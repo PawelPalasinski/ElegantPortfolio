@@ -10,7 +10,8 @@ import Upcoming from "@/pages/upcoming";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 import SimpleGallery from "@/components/SimpleGallery";
-import { BackgroundImage } from "@/components/ui/background-image"; // Added import
+import { BackgroundImage } from "@/components/ui/background-image";
+import { ThemeProvider } from "@/components/providers/theme-provider"; // Added import
 
 
 function Router() {
@@ -30,14 +31,16 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen relative bg-background text-foreground">
-        <BackgroundImage />
-        <Navigation />
-        <main className="pt-16">
-          <Router />
-        </main>
-        <Toaster />
-      </div>
+      <ThemeProvider> {/* Added ThemeProvider */}
+        <div className="min-h-screen relative bg-background text-foreground">
+          <BackgroundImage />
+          <Navigation />
+          <main className="pt-16">
+            <Router />
+          </main>
+          <Toaster />
+        </div>
+      </ThemeProvider> {/* Added ThemeProvider */}
     </QueryClientProvider>
   );
 }

@@ -12,7 +12,7 @@ const links = [
   { href: "/books", label: "Książki" },
   { href: "/upcoming", label: "Nadchodzące" },
   { href: "/contact", label: "Kontakt" },
-  { href: "/gallery", label: "Galeria" }, 
+  { href: "/gallery", label: "Galeria" }, // Added gallery link
 ];
 
 export function Navigation() {
@@ -20,7 +20,7 @@ export function Navigation() {
   const [location] = useLocation();
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-primary/30">
+    <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md border-b border-primary/30"> {/* Updated Navigation Style */}
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
           <span className="text-2xl font-bold text-primary cursor-pointer">Autor</span>
