@@ -2,36 +2,51 @@ import { motion } from "framer-motion";
 
 export function FernPattern() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden opacity-[0.03] dark:opacity-[0.02] pointer-events-none">
+    <div className="fixed inset-0 -z-10 overflow-hidden opacity-[0.15] dark:opacity-[0.1] pointer-events-none">
       <svg width="100%" height="100%" className="absolute">
         <pattern
           id="fern-pattern"
           x="0"
           y="0"
-          width="100"
-          height="100"
+          width="200"
+          height="200"
           patternUnits="userSpaceOnUse"
         >
+          {/* Główny liść paproci */}
           <path
-            d="M50 0C50 0 45 10 40 15C35 20 25 25 20 35C15 45 15 55 20 65C25 75 35 80 40 85C45 90 50 100 50 100"
+            d="M100 0C100 0 90 20 80 30C70 40 50 50 40 70C30 90 30 110 40 130C50 150 70 160 80 170C90 180 100 200 100 200"
+            stroke="currentColor"
+            fill="none"
+            strokeWidth="2"
+            className="transform -rotate-45"
+          />
+          {/* Boczne listki */}
+          <path
+            d="M60 60C60 60 50 70 40 80C30 90 20 100 20 120C20 140 30 150 40 160C50 170 60 180 60 180"
             stroke="currentColor"
             fill="none"
             strokeWidth="1"
-            className="transform -rotate-45"
-          />
-          <path
-            d="M30 30C30 30 25 35 20 40C15 45 10 50 10 60C10 70 15 75 20 80C25 85 30 90 30 90"
-            stroke="currentColor"
-            fill="none"
-            strokeWidth="0.5"
             className="transform rotate-90"
           />
           <path
-            d="M70 30C70 30 75 35 80 40C85 45 90 50 90 60C90 70 85 75 80 80C75 85 70 90 70 90"
+            d="M140 60C140 60 150 70 160 80C170 90 180 100 180 120C180 140 170 150 160 160C150 170 140 180 140 180"
+            stroke="currentColor"
+            fill="none"
+            strokeWidth="1"
+            className="transform -rotate-90"
+          />
+          {/* Dekoracyjne spirale */}
+          <path
+            d="M80 80C80 80 85 85 85 90C85 95 80 100 75 100"
             stroke="currentColor"
             fill="none"
             strokeWidth="0.5"
-            className="transform -rotate-90"
+          />
+          <path
+            d="M120 120C120 120 125 125 125 130C125 135 120 140 115 140"
+            stroke="currentColor"
+            fill="none"
+            strokeWidth="0.5"
           />
         </pattern>
         <rect width="100%" height="100%" fill="url(#fern-pattern)" />
