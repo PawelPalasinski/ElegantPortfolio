@@ -10,7 +10,8 @@ const links = [
   { href: "/about", label: "O mnie" },
   { href: "/books", label: "Książki" },
   { href: "/upcoming", label: "Nadchodzące" },
-  { href: "/contact", label: "Kontakt" }
+  { href: "/contact", label: "Kontakt" },
+  { href: "/gallery", label: "Galeria" }, // Added gallery link
 ];
 
 export function Navigation() {
@@ -28,11 +29,11 @@ export function Navigation() {
         <div className="hidden md:flex items-center space-x-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href}>
-              <a className={`hover:text-primary transition-colors ${
+              <span className={`hover:text-primary transition-colors ${
                 location === link.href ? "text-primary" : "text-muted-foreground"
               }`}>
                 {link.label}
-              </a>
+              </span>
             </Link>
           ))}
           <ThemeToggle />
