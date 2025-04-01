@@ -8,11 +8,8 @@ export function useTheme() {
     const saved = localStorage.getItem("theme");
     if (saved === "light" || saved === "dark") return saved;
     
-    // Check system preference
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
+    // Ustawienie domyślne na ciemny motyw zamiast jasnego
+    return "dark";
   });
 
   useEffect(() => {

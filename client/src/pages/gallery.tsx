@@ -99,10 +99,10 @@ const Gallery: React.FC = () => {
               </div>
               
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-xl font-serif text-white">
                   {galleryImages[selectedImage].title}
                 </h3>
-                <p className="text-white/90 mt-1">
+                <p className="text-white/90 mt-1 font-serif">
                   {galleryImages[selectedImage].description}
                 </p>
               </div>
@@ -192,8 +192,8 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
       </div>
       
       <div className="p-4 bg-white dark:bg-gray-800">
-        <h3 className="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">{image.title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">{image.description}</p>
+        <h3 className="font-serif text-lg mb-2 text-gray-900 dark:text-gray-100">{image.title}</h3>
+        <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 font-serif">{image.description}</p>
       </div>
     </motion.div>
   );

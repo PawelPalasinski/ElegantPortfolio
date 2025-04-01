@@ -28,8 +28,8 @@ export function BookCard({ title, description, imageUrl, delay = 0 }: BookCardPr
           />
         </div>
         <CardHeader>
-          <CardTitle>{title}</CardTitle>
-          <CardDescription>{description}</CardDescription>
+          <CardTitle className="font-serif">{title}</CardTitle>
+          <CardDescription className="font-serif">{description}</CardDescription>
         </CardHeader>
       </Card>
     </motion.div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8e9c5c" />
+      <stop offset="100%" stop-color="#c0ca7b" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Tło okrągłe -->
+  <circle cx="60" cy="60" r="56" fill="#1a1a1a" />
+  
+  <!-- Litera M stylizowana -->
+  <path d="M35 30 L35 90 L50 90 L50 50 L60 70 L70 50 L70 90 L85 90 L85 30 L65 30 L60 50 L55 30 Z" 
+        fill="none" stroke="url(#moonGradient)" stroke-width="3" stroke-linejoin="round" />
+  
+  <!-- Litera P stylizowana -->
+  <path d="M45 40 L75 40 C82 40 88 46 88 53 C88 60 82 66 75 66 L45 66 Z" 
+        fill="none" stroke="url(#moonGradient)" stroke-width="2" stroke-linejoin="round" />
+  
+  <!-- Księżyc -->
+  <circle cx="85" cy="35" r="15" fill="url(#moonGradient)" />
+  <circle cx="92" cy="30" r="12" fill="#1a1a1a" />
+</svg>

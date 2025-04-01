@@ -34,13 +34,13 @@ export default function About() {
 
               <AnimatedText
                 text="Z ponad dziesięcioletnim doświadczeniem w tworzeniu wciągających narracji, poświęciłam życie sztuce opowiadania historii. Moja praca obejmuje różne gatunki, od fikcji współczesnej po powieści historyczne, każda starannie napisana, by stworzyć niezapomniane doświadczenia dla czytelników."
-                className="text-muted-foreground"
+                className="text-muted-foreground font-serif"
                 delay={0.4}
               />
 
               <AnimatedText
                 text="Moja podróż jako autorki rozpoczęła się w cichych zakątkach lokalnych bibliotek i przerodziła się w pasję tworzenia światów, w których czytelnicy mogą się zatracić. Każda książka reprezentuje nie tylko historię, ale nową przygodę, nową perspektywę i nowy sposób patrzenia na świat."
-                className="text-muted-foreground"
+                className="text-muted-foreground font-serif"
                 delay={0.6}
               />
             </div>

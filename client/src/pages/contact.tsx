@@ -14,7 +14,7 @@ export default function Contact() {
           />
           <AnimatedText
             text="Chętnie odpowiem na Twoje pytania"
-            className="text-xl text-muted-foreground text-center mb-16"
+            className="text-xl text-muted-foreground text-center mb-16 font-serif"
             delay={0.2}
           />
 
@@ -34,7 +34,7 @@ export default function Contact() {
                     kontakt@autor.pl
                   </a>
                 </div>
-                <p className="text-center mt-4 text-muted-foreground">
+                <p className="text-center mt-4 text-muted-foreground font-serif">
                   Odpowiadam na wszystkie wiadomości w ciągu 48 godzin.
                 </p>
               </CardContent>

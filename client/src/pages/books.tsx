@@ -1,6 +1,6 @@
 import { AnimatedText } from "@/components/ui/animated-text";
 import { BookDetail } from "@/components/ui/book-detail";
-import { FernPattern } from "@/components/ui/fern-pattern";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -44,9 +44,7 @@ export default function Books() {
 
   return (
     <div className="min-h-screen py-16 relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden opacity-40">
-        <FernPattern />
-      </div>
+
       
       <div className="container mx-auto px-4 relative z-10">
         <AnimatedText
@@ -93,7 +91,7 @@ export default function Books() {
               <h2 className="text-2xl font-serif mb-6 text-center">
                 Książki w przygotowaniu
               </h2>
-              <p className="text-center text-muted-foreground mb-10">
+              <p className="text-center text-muted-foreground mb-10 font-serif">
                 Obecnie pracuję nad nowymi książkami, które zostaną wydane w najbliższej przyszłości.
                 Poniżej znajdziesz informacje o projektach, nad którymi pracuję.
               </p>
@@ -119,7 +117,7 @@ export default function Books() {
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-serif mb-2">{book.title}</h3>
-                      <p className="text-muted-foreground">{book.description}</p>
+                      <p className="text-muted-foreground font-serif">{book.description}</p>
                     </div>
                   </motion.div>
                 ))}

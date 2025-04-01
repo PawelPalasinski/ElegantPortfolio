@@ -160,7 +160,7 @@ export function BookDetail({
                       delay: 0.2 + (index * 0.1),
                       ease: "easeOut" 
                     }}
-                    className="mb-4"
+                    className="mb-4 font-serif"
                   >
                     {paragraph}
                   </motion.p>
@@ -171,7 +171,7 @@ export function BookDetail({
             <TabsContent value="preview">
               <div className="rounded-lg bg-primary/5 p-6 mb-4">
                 <h3 className="text-lg font-medium mb-4">Pobierz fragment książki</h3>
-                <p className="mb-6 text-muted-foreground">
+                <p className="mb-6 text-muted-foreground font-serif">
                   Zapoznaj się z fragmentem książki przed zakupem. Dostępne w formatach PDF i MOBI.
                 </p>
                 
