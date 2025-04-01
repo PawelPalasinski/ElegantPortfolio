@@ -1,0 +1,89 @@
+:root {
+  /* Kolory podstawowe */
+  --color-primary: #6f4e37; /* Brązowy */
+  --color-primary-dark: #4e3525;
+  --color-primary-light: #8c6a53;
+  
+  /* Kolory tła */
+  --color-background-light: #f7f2ec; /* Kremowe tło dla jasnego motywu */
+  --color-background-dark: #1e1a15; /* Ciemnobrązowe tło dla ciemnego motywu */
+  
+  /* Kolory tekstu */
+  --color-text-light: #f7f2ec; /* Tekst na ciemnym tle */
+  --color-text-dark: #1e1a15; /* Tekst na jasnym tle */
+  
+  /* Kolory akcentów */
+  --color-accent: #a67c52; /* Złocisty akcent */
+  --color-accent-dark: #8c6a53;
+  --color-accent-light: #c09a70;
+  
+  /* Kolory dla elementów mistycznych */
+  --color-mystical: #457b9d; /* Niebieskozielony */
+  --color-mystical-light: #a8dadc;
+  --color-mystical-dark: #1d3557;
+  
+  /* Kolory przycisków */
+  --color-button: var(--color-primary);
+  --color-button-hover: var(--color-primary-light);
+  --color-button-text: var(--color-text-light);
+  
+  /* Gradienty */
+  --gradient-mystical-light: linear-gradient(135deg, rgba(168, 218, 220, 0.1) 0%, rgba(69, 123, 157, 0.2) 100%);
+  --gradient-mystical-dark: linear-gradient(135deg, rgba(29, 53, 87, 0.3) 0%, rgba(69, 123, 157, 0.4) 100%);
+  
+  /* Czcionki */
+  --font-primary: 'Cormorant Garamond', serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  --font-heading: var(--font-primary);
+  --font-body: var(--font-secondary);
+  
+  /* Rozmiary czcionek */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  
+  /* Odstępy */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Cienie */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Przejścia */
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+  
+  /* Zaokrąglenia */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 9999px;
+}
+
+/* Zmienne specyficzne dla ciemnego motywu */
+.dark {
+  --color-background: var(--color-background-dark);
+  --color-text: var(--color-text-light);
+  --color-button-text: var(--color-text-light);
+  --mystical-gradient: var(--gradient-mystical-dark);
+}
+
+/* Zmienne specyficzne dla jasnego motywu */
+:root:not(.dark) {
+  --color-background: var(--color-background-light);
+  --color-text: var(--color-text-dark);
+  --color-button-text: var(--color-text-light);
+  --mystical-gradient: var(--gradient-mystical-light);
+}

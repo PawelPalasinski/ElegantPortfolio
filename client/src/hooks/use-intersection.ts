@@ -40,3 +40,6 @@ export function useInView({
 
   return { ref, inView };
 }
+
+// Eksportujemy alias dla kompatybilności z komponentem galerii
+export const useIntersectionObserver = useInView;

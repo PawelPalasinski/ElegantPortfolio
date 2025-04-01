@@ -1,0 +1,202 @@
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { galleryImages } from "@/data/gallery-data";
+import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+
+const Gallery: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  // Funkcja do nawigacji między obrazami w trybie pełnoekranowym
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (selectedImage === null) return;
+    
+    const newIndex = direction === 'next'
+      ? (selectedImage + 1) % galleryImages.length
+      : (selectedImage - 1 + galleryImages.length) % galleryImages.length;
+    
+    setSelectedImage(newIndex);
+  };
+
+  // Obsługa klawiszy strzałek do nawigacji
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImage === null) return;
+      
+      if (e.key === 'ArrowRight') {
+        navigateImage('next');
+      } else if (e.key === 'ArrowLeft') {
+        navigateImage('prev');
+      } else if (e.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
+
+  return (
+    <div className="container mx-auto px-4 py-16 min-h-screen">
+      <h1 className="text-4xl md:text-5xl font-serif text-center mb-8 text-primary dark:text-primary-foreground">
+        Galeria
+      </h1>
+
+      <p className="text-center mb-12 max-w-2xl mx-auto text-lg">
+        Odkryj magiczne miejsca, krajobrazy i motywy, które inspirują mnie podczas pisania.
+        Każde zdjęcie opowiada swoją własną historię i ukazuje kawałek mojego świata wyobraźni.
+      </p>
+      
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {galleryImages.map((image, index) => (
+          <GalleryItem 
+            key={image.id}
+            image={image} 
+            index={index}
+            onSelect={() => setSelectedImage(index)}
+          />
+        ))}
+      </motion.div>
+
+      {/* Tryb pełnoekranowy / modal */}
+      <Dialog open={selectedImage !== null} onOpenChange={(open) => !open && setSelectedImage(null)}>
+        <DialogContent className="max-w-5xl w-full bg-background p-0 border-none">
+          {selectedImage !== null && (
+            <div className="relative">
+              <div className="flex justify-center items-center">
+                <img
+                  src={galleryImages[selectedImage].src}
+                  alt={galleryImages[selectedImage].alt}
+                  className="max-h-[80vh] object-contain"
+                />
+              </div>
+              
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <h3 className="text-xl font-semibold text-white">
+                  {galleryImages[selectedImage].title}
+                </h3>
+                <p className="text-white/90 mt-1">
+                  {galleryImages[selectedImage].description}
+                </p>
+              </div>
+              
+              {/* Przyciski nawigacji */}
+              <button 
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full"
+                onClick={() => navigateImage('prev')}
+              >
+                <ChevronLeft size={30} />
+              </button>
+              
+              <button 
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full"
+                onClick={() => navigateImage('next')}
+              >
+                <ChevronRight size={30} />
+              </button>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+};
+
+interface GalleryItemProps {
+  image: typeof galleryImages[0];
+  index: number;
+  onSelect: () => void;
+}
+
+const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(ref.current!);
+        }
+      },
+      { threshold: 0.2 }
+    );
+    
+    observer.observe(ref.current);
+    
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative group overflow-hidden rounded-lg shadow-lg border border-gray-200 dark:border-gray-800"
+    >
+      <div className="aspect-w-16 aspect-h-10 overflow-hidden bg-gray-100 dark:bg-gray-900">
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+        />
+        
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+          <div className="p-4 w-full">
+            <h3 className="text-white text-lg font-semibold">{image.title}</h3>
+          </div>
+        </div>
+        
+        <button
+          onClick={onSelect}
+          className="absolute top-3 right-3 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+          aria-label="Powiększ zdjęcie"
+        >
+          <ZoomIn size={18} />
+        </button>
+      </div>
+      
+      <div className="p-4 bg-white dark:bg-gray-800">
+        <h3 className="font-semibold text-lg mb-2 text-gray-900 dark:text-gray-100">{image.title}</h3>
+        <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">{image.description}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Gallery;
