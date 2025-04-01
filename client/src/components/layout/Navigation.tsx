@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
+import { Logo } from "@/components/ui/logo";
 
 const links = [
   { href: "/", label: "Strona główna" },
@@ -22,7 +23,9 @@ export function Navigation() {
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="text-2xl font-bold">Autor</a>
+          <a className="flex items-center">
+            <Logo className="h-10 w-auto text-primary" animate={false} />
+          </a>
         </Link>
 
         {/* Desktop Navigation */}

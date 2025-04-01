@@ -1,26 +1,26 @@
 :root {
   /* Kolory podstawowe */
-  --color-primary: #6f4e37; /* Brązowy */
-  --color-primary-dark: #4e3525;
-  --color-primary-light: #8c6a53;
+  --color-primary: #7d6e52; /* Stonowany oliwkowy/złoty */
+  --color-primary-dark: #584c34;
+  --color-primary-light: #a99e7e;
   
   /* Kolory tła */
-  --color-background-light: #f7f2ec; /* Kremowe tło dla jasnego motywu */
-  --color-background-dark: #1e1a15; /* Ciemnobrązowe tło dla ciemnego motywu */
+  --color-background-light: #f5f2ed; /* Kremowe tło dla jasnego motywu */
+  --color-background-dark: #1a1814; /* Głębokie ciemne tło dla ciemnego motywu */
   
   /* Kolory tekstu */
-  --color-text-light: #f7f2ec; /* Tekst na ciemnym tle */
-  --color-text-dark: #1e1a15; /* Tekst na jasnym tle */
+  --color-text-light: #f5f2ed; /* Tekst na ciemnym tle */
+  --color-text-dark: #1a1814; /* Tekst na jasnym tle */
   
   /* Kolory akcentów */
-  --color-accent: #a67c52; /* Złocisty akcent */
-  --color-accent-dark: #8c6a53;
-  --color-accent-light: #c09a70;
+  --color-accent: #927e54; /* Złoto-oliwkowy akcent */
+  --color-accent-dark: #6b5d3c;
+  --color-accent-light: #b3a67d;
   
   /* Kolory dla elementów mistycznych */
-  --color-mystical: #457b9d; /* Niebieskozielony */
-  --color-mystical-light: #a8dadc;
-  --color-mystical-dark: #1d3557;
+  --color-mystical: #3e5c62; /* Przytłumiony niebieskozielony */
+  --color-mystical-light: #8da3a8;
+  --color-mystical-dark: #1d2e32;
   
   /* Kolory przycisków */
   --color-button: var(--color-primary);
@@ -32,7 +32,7 @@
   --gradient-mystical-dark: linear-gradient(135deg, rgba(29, 53, 87, 0.3) 0%, rgba(69, 123, 157, 0.4) 100%);
   
   /* Czcionki */
-  --font-primary: 'Cormorant Garamond', serif;
+  --font-primary: 'Cinzel', serif;
   --font-secondary: 'Montserrat', sans-serif;
   --font-heading: var(--font-primary);
   --font-body: var(--font-secondary);
