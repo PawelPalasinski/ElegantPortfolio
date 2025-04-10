@@ -11,7 +11,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "https://images.unsplash.com/photo-1502239608882-93b729c6af43')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1502239608882-93b729c6af43')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.8,
