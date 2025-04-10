@@ -2,8 +2,8 @@
 <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#8e9c5c" />
-      <stop offset="100%" stop-color="#c0ca7b" />
+      <stop offset="0%" stop-color="#0052D4" />
+      <stop offset="100%" stop-color="#C0C0C0" />
     </linearGradient>
   </defs>
   
