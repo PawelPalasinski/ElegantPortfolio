@@ -7,13 +7,13 @@ export default function Home() {
   return (
     <div className="min-h-[calc(100vh-4rem)]">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
         <div 
-          className="absolute inset-0 z-0"
+          className="fixed inset-0 bottom-[4rem] z-0"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1502239608882-93b729c6af43')",
+            backgroundImage: "url('/images/hero-bg.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "cover",
+            backgroundPosition: "center",
             opacity: 0.2,
           }}
         />

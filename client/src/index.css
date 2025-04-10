@@ -17,13 +17,22 @@ button, .btn, a, nav, .nav-link, .font-bold {
 
 /* Dodanie półprzezroczystego tła obrazu z księżycem */
 .bg-image-overlay {
-  background-image: url('https://images.unsplash.com/photo-1532978379173-523e16f371f4?q=80&w=2670&auto=format&fit=crop');
+  background-image: url('/images/site-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  opacity: 0.2; /* Zwiększona widoczność */
-  z-index: -10; /* Zapewniamy właściwą warstwę */
+  opacity: 0.2;
+  z-index: -10;
+}
+
+/* New gradient colors */
+:root {
+  --gradient-mystical: linear-gradient(135deg, #0052D4 0%, #C0C0C0 100%);
+}
+
+.dark {
+  --gradient-mystical: linear-gradient(135deg, #003785 0%, #808080 100%);
 }
 
 @layer base {
