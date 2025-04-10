@@ -13,8 +13,8 @@ export default function Home() {
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1502239608882-93b729c6af43')",
             backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.8,
+            backgroundPosition: "cover",
+            opacity: 0.2,
           }}
         />
 
