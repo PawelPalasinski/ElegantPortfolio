@@ -9,12 +9,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
         <div 
-          className="fixed inset-0 bottom-[4rem] z-0"
+          className="fixed inset-0 bottom-0 z-0"
           style={{
-            backgroundImage: "url('/images/hero-bg.jpg')",
+            backgroundImage: "url('/images/background-main.jpg')",
             backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.2,
+            backgroundPosition: "center bottom",
+            opacity: 0.3,
           }}
         />
 

@@ -19,7 +19,7 @@ export default function About() {
               className="aspect-[3/4] relative"
             >
               <img
-                src="/attached_assets/_8988a4dc-dd51-447c-b7fb-aa47adb4ed8b.jpeg"
+                src="/images/author-photo.jpg"
                 alt="Zdjęcie autorki"
                 className="rounded-lg shadow-lg object-cover w-full h-full"
               />

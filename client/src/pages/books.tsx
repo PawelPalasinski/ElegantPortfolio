@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 // Obecna książka
 const currentBook = {
   title: "Szepty w Ciemności",
-  author: "Marta Pankonin",
-  coverImage: "https://images.unsplash.com/photo-1555252586-d77e8c828e41?q=80&w=1974&auto=format&fit=crop",
+  author: "Marcelina Pałasińska",
+  coverImage: "/images/book-cover-1.jpg",
   description: `"Szepty w Ciemności" to fascynująca opowieść o tajemnicach ukrytych w starym, zapomnianym dworku na skraju wsi. 
   
   Główna bohaterka, Anna, wraca do rodzinnej miejscowości po latach nieobecności, aby uporządkować sprawy po zmarłej babci. W opuszczonym domu odkrywa stary dziennik, który prowadzi ją do sekretów sprzed lat.
@@ -30,12 +30,12 @@ const upcomingBooks = [
   {
     title: "Zapomniana Ścieżka",
     description: "Historia o odkupieniu i nadziei, wydanie już wkrótce",
-    imageUrl: "https://images.unsplash.com/photo-1521105993401-3a51411aff9e?q=80&w=2070&auto=format&fit=crop"
+    imageUrl: "/images/book-upcoming-1.jpg"
   },
   {
     title: "Za Horyzontem",
     description: "Epicka opowieść o przygodzie i odkryciach",
-    imageUrl: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?q=80&w=2070&auto=format&fit=crop"
+    imageUrl: "/images/book-upcoming-2.jpg"
   }
 ];
 
