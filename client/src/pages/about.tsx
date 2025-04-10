@@ -33,13 +33,14 @@ export default function About() {
               />
 
               <AnimatedText
-                text="Z ponad dziesięcioletnim doświadczeniem w tworzeniu wciągających narracji, poświęciłam życie sztuce opowiadania historii. Moja praca obejmuje różne gatunki, od fikcji współczesnej po powieści historyczne, każda starannie napisana, by stworzyć niezapomniane doświadczenia dla czytelników."
+                text="Marcela Palas urodziła się, wychowała i mieszka w Krakowie. Jej dzieciństwo przypadło na lata 90-te, dzięki czemu miała szczęście spędzić je beztrosko pośród rówieśników na zabawach pod przysłowiowym blokiem oraz zaczytując się wszystkim, co wpadło jej w ręce. Studiowała na Wydziale Filozoficznym Uniwersytetu Jagiellońskiego na kulturoznawczym kierunku Porównawcze Studia Cywilizacji. Po ukończeniu studiów przez kilka lat pracowała w branży zajmującej się sprzedażą i wynajmem nieruchomości. Aktualnie zajmuje się dzieleniem czasu pomiędzy wychowaniem dwójki małych urwisów, Eryka i Olafa, oraz twórczym pisaniem."
                 className="text-muted-foreground font-serif"
                 delay={0.4}
               />
 
               <AnimatedText
-                text="Moja podróż jako autorki rozpoczęła się w cichych zakątkach lokalnych bibliotek i przerodziła się w pasję tworzenia światów, w których czytelnicy mogą się zatracić. Każda książka reprezentuje nie tylko historię, ale nową przygodę, nową perspektywę i nowy sposób patrzenia na świat."
+                text="Prywatnie – pasjonatka literatury i popkultury, o zacięciu kolekcjonerskim. Wraz z mężem metodycznie powiększa księgozbiór literatury fantasy i sci-fi, kolekcję ponad kilkuset komiksów i figurek Funko Pop. W wolnych chwilach uwielbia rodzinne rywalizacje w grach planszowych oraz wycieczki poza miasto. Wilcza Paproć jest jej debiutem literackim. 
+"
                 className="text-muted-foreground font-serif"
                 delay={0.6}
               />

@@ -6,20 +6,14 @@ import { motion } from "framer-motion";
 
 // Obecna książka
 const currentBook = {
-  title: "Szepty w Ciemności",
-  author: "Marcelina Pałasińska",
+  title: "Wilcza Paproć",
+  author: "Marcela Pałas",
   coverImage: "/images/book-cover-1.jpg",
-  description: `"Szepty w Ciemności" to fascynująca opowieść o tajemnicach ukrytych w starym, zapomnianym dworku na skraju wsi. 
-  
-  Główna bohaterka, Anna, wraca do rodzinnej miejscowości po latach nieobecności, aby uporządkować sprawy po zmarłej babci. W opuszczonym domu odkrywa stary dziennik, który prowadzi ją do sekretów sprzed lat.
-  
-  W miarę jak zagłębia się w historię swojej rodziny, zaczyna doświadczać niewytłumaczalnych zjawisk. Czy to tylko wytwór jej wyobraźni, czy może duch przeszłości domaga się sprawiedliwości? A może tajemnice powinny zostać nieodkryte?
-  
-  Powieść łączy elementy thrillera psychologicznego z subtelnymi wątkami paranormalnymi, tworząc intrygującą historię o pamięci, winie i odkupieniu.`,
-  publishDate: "2023-10-15",
-  pages: 342,
-  genre: ["Thriller psychologiczny", "Tajemnica", "Literatura polska"],
-  rating: 4.7,
+  description: `Kiedy Lenne Ashen, niepokorna córka władcy Sawady, dowiaduje się, że ojciec chce wydać ją za mąż za księcia sąsiadującej krainy, myśli, że jej świat się właśnie skończył. Książę Bluewater, powszechnie znany jako groźny Sinobrody, cieszy się złą sławą, a jego osiem poprzednich żon zginęło w niewyjaśnionych okolicznościach. Los Lenne został jednak przesądzony. Młoda dziewczyna wyrusza w podróż do księstwa Kaspii pełna najgorszych przeczuć. Tam czeka na nią jej nowy dom – zamek Sinych Wód, ponura twierdza ukryta głęboko pośród nieprzystępnych moczarów i otoczona jeszcze bardziej niebezpieczną Olszową Puszczą. Spowitym wieczną mgłą lesie, pełnym magii i morderczych sekretów…`,
+  publishDate: "2025-05-25",
+  pages: 350,
+  genre: ["Retelling", "Romantasy", "Gotycki Horror"],
+  // rating: 4.7,
   buyLink: "#",
   previewPdf: "#",
   previewMobi: "#"
@@ -28,14 +22,9 @@ const currentBook = {
 // Nadchodzące książki (przyszłe wydania)
 const upcomingBooks = [
   {
-    title: "Zapomniana Ścieżka",
-    description: "Historia o odkupieniu i nadziei, wydanie już wkrótce",
+    title: "Róże z piasku",
+    description: "PEŁNA SPISKÓW I DWORSKICH INTRYG PRZYGODA INSPIROWANA BAŚNIĄ O LAMPIE ALADYNA",
     imageUrl: "/images/book-upcoming-1.jpg"
-  },
-  {
-    title: "Za Horyzontem",
-    description: "Epicka opowieść o przygodzie i odkryciach",
-    imageUrl: "/images/book-upcoming-2.jpg"
   }
 ];
 

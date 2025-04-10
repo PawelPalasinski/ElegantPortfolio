@@ -28,7 +28,7 @@ export function BookDetail({
   publishDate,
   pages,
   genre,
-  rating = 4.5,
+  rating,
   buyLink = "#",
   previewPdf = "#",
   previewMobi = "#"

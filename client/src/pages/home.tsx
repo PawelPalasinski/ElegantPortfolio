@@ -26,7 +26,7 @@ export default function Home() {
             className="max-w-3xl"
           >
             <AnimatedText
-              text="Marcelina Pałasińska"
+              text="Marcels Palas"
               className="text-5xl md:text-7xl font-bold mb-6"
             />
             <AnimatedText

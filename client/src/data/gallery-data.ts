@@ -10,9 +10,9 @@ export const galleryImages: GalleryImage[] = [
   {
     id: 1,
     src: "/images/gallery-1.jpg",
-    alt: "Mistyczny las o zmierzchu",
-    title: "Leśne sanktuarium",
-    description: "Promienie zachodzącego słońca przedzierające się przez gęstą mgłę w pradawnym lesie."
+    alt: "Wilcza Paproć",
+    title: "Wilcza Paproć",
+    description: "Wilcza Paproć"
   },
   {
     id: 2,
