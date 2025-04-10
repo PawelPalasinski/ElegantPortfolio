@@ -11,10 +11,10 @@ export default function Home() {
         <div 
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1503455637927-730bce8583c0')",
+            backgroundImage: "https://images.unsplash.com/photo-1502239608882-93b729c6af43')",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            opacity: 0.1
+            opacity: 0.8,
           }}
         />
 
@@ -26,7 +26,7 @@ export default function Home() {
             className="max-w-3xl"
           >
             <AnimatedText
-              text="Tworzenie inspirujących historii"
+              text="Marcelina Pałasińska"
               className="text-5xl md:text-7xl font-bold mb-6"
             />
             <AnimatedText
