@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { galleryImages } from "@/data/gallery-data";
-import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, ZoomIn, X } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Gallery: React.FC = () => {
@@ -60,11 +60,11 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-16 min-h-screen">
-      <h1 className="text-4xl md:text-5xl font-serif text-center mb-8 text-primary dark:text-primary-foreground">
+      <h1 className="text-4xl md:text-5xl font-cinzel text-center mb-8 bg-gradient-highlight text-transparent bg-clip-text">
         Galeria
       </h1>
 
-      <p className="text-center mb-12 max-w-2xl mx-auto text-lg">
+      <p className="text-center mb-12 max-w-2xl mx-auto text-lg font-cinzel">
         Odkryj magiczne miejsca, krajobrazy i motywy, które inspirują mnie podczas pisania.
         Każde zdjęcie opowiada swoją własną historię i ukazuje kawałek mojego świata wyobraźni.
       </p>
@@ -85,46 +85,54 @@ const Gallery: React.FC = () => {
         ))}
       </motion.div>
 
-      {/* Tryb pełnoekranowy / modal */}
-      <Dialog open={selectedImage !== null} onOpenChange={(open) => !open && setSelectedImage(null)}>
-        <DialogContent className="max-w-5xl w-full bg-background p-0 border-none">
-          {selectedImage !== null && (
-            <div className="relative">
-              <div className="flex justify-center items-center">
-                <img
-                  src={galleryImages[selectedImage].src}
-                  alt={galleryImages[selectedImage].alt}
-                  className="max-h-[80vh] object-contain"
-                />
-              </div>
-              
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <h3 className="text-xl font-serif text-white">
-                  {galleryImages[selectedImage].title}
-                </h3>
-                <p className="text-white/90 mt-1 font-serif">
-                  {galleryImages[selectedImage].description}
-                </p>
-              </div>
-              
-              {/* Przyciski nawigacji */}
-              <button 
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full"
-                onClick={() => navigateImage('prev')}
-              >
-                <ChevronLeft size={30} />
-              </button>
-              
-              <button 
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full"
-                onClick={() => navigateImage('next')}
-              >
-                <ChevronRight size={30} />
-              </button>
+      {/* Pełnoekranowy widok galerii */}
+      {selectedImage !== null && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative w-full h-full flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={galleryImages[selectedImage].src} 
+              alt={galleryImages[selectedImage].alt} 
+              className="object-contain max-h-[85vh] max-w-[90vw]"
+            />
+            
+            <button
+              className="absolute top-4 right-4 bg-primary text-white p-2 rounded-full shadow-xl"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X size={24} />
+            </button>
+            
+            <div className="absolute inset-x-0 bottom-8 text-center text-white bg-gradient-to-t from-black/60 to-transparent py-8 px-4">
+              <h2 className="text-2xl font-cinzel mb-2">{galleryImages[selectedImage].title}</h2>
+              <p className="text-base font-cinzel">{galleryImages[selectedImage].description}</p>
             </div>
-          )}
-        </DialogContent>
-      </Dialog>
+            
+            {/* Przyciski nawigacji */}
+            <button 
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-gradient-button text-white p-3 rounded-full shadow-xl"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateImage('prev');
+              }}
+            >
+              <ChevronLeft size={30} />
+            </button>
+            
+            <button 
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-button text-white p-3 rounded-full shadow-xl"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateImage('next');
+              }}
+            >
+              <ChevronRight size={30} />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -191,9 +199,9 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
         </button>
       </div>
       
-      <div className="p-4 bg-white dark:bg-gray-800">
-        <h3 className="font-serif text-lg mb-2 text-gray-900 dark:text-gray-100">{image.title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 font-serif">{image.description}</p>
+      <div className="p-4 bg-gradient-highlight text-primary-foreground">
+        <h3 className="font-cinzel text-lg mb-2">{image.title}</h3>
+        <p className="text-primary-foreground/80 text-sm line-clamp-2 font-cinzel">{image.description}</p>
       </div>
     </motion.div>
   );
