@@ -67,17 +67,7 @@ export function BookDetail({
             />
             
             {/* Nakładka z gradientem i ikoną powiększenia */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between">
-              <div className="p-4 self-end">
-                <div className="bg-black/30 p-2 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-                    <path d="M15 3h6v6"></path>
-                    <path d="M10 14 21 3"></path>
-                  </svg>
-                </div>
-              </div>
-              
-            </div>
+            
           </div>
 
           {/* Przycisk zakupu */}
