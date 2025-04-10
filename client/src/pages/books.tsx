@@ -1,5 +1,7 @@
 import { AnimatedText } from "@/components/ui/animated-text";
 import { BookDetail } from "@/components/ui/book-detail";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { X } from "lucide-react";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
