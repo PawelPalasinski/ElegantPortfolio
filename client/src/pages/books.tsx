@@ -112,8 +112,21 @@ export default function Books() {
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
-                        <span className="text-white text-sm font-bold">Kliknij, aby powiększyć</span>
+                      <div className="absolute top-2 right-2 p-2 bg-black/40 rounded-full opacity-0 hover:opacity-100 transition-opacity">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-white"
+                        >
+                          <path d="M15 3h6v6M14 10l7-7m0 0v11M3 21h6v-6M10 14l7 7m0 0H6" />
+                        </svg>
                       </div>
                     </div>
                   </div>
