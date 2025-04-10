@@ -85,32 +85,35 @@ export default function Books() {
                 Poniżej znajdziesz informacje o projektach, nad którymi pracuję.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {upcomingBooks.map((book, index) => (
-                  <motion.div
-                    key={book.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ 
-                      opacity: 1, 
-                      y: 0,
-                      transition: { delay: index * 0.2 } 
-                    }}
-                    className="rounded-lg overflow-hidden bg-background shadow-md border border-border"
-                  >
-                    <div className="h-48 overflow-hidden">
-                      <img 
-                        src={book.imageUrl} 
-                        alt={book.title} 
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              {upcomingBooks.map((book, index) => (
+                <motion.div
+                  key={book.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: index * 0.2 } 
+                  }}
+                  className="p-8 flex flex-col lg:flex-row gap-10 bg-card rounded-lg shadow-lg border border-border mb-8"
+                >
+                  <div className="lg:w-1/3 flex flex-col items-center">
+                    <div className="relative overflow-hidden rounded-lg shadow-2xl w-full max-w-sm mb-6">
+                      <motion.img
+                        src={book.imageUrl}
+                        alt={book.title}
+                        className="w-full h-auto object-cover"
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                       />
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-serif mb-2">{book.title}</h3>
-                      <p className="text-muted-foreground font-serif">{book.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+                  </div>
+                  <div className="lg:w-2/3">
+                    <h3 className="text-3xl md:text-4xl font-serif mb-2">{book.title}</h3>
+                    <p className="text-muted-foreground mt-6 font-serif">{book.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           )}
         </motion.div>
