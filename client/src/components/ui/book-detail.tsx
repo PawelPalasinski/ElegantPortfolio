@@ -76,19 +76,7 @@ export function BookDetail({
                   </svg>
                 </div>
               </div>
-              <div className="p-4">
-                <div className="flex items-center text-white">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-5 h-5 ${
-                        i < Math.floor(rating) ? "fill-primary text-primary" : "fill-none text-gray-400"
-                      }`}
-                    />
-                  ))}
-                  <span className="ml-2 text-white">{rating}</span>
-                </div>
-              </div>
+              
             </div>
           </div>
 
@@ -126,13 +114,7 @@ export function BookDetail({
               <p className="text-sm text-muted-foreground">Liczba stron</p>
               <p className="font-medium">{pages}</p>
             </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Ocena</p>
-              <p className="font-medium flex items-center">
-                <Star className="w-4 h-4 fill-primary text-primary mr-1" />
-                {rating}/5
-              </p>
-            </div>
+            
           </div>
 
           {/* Tabs dla opisu i fragmentów */}

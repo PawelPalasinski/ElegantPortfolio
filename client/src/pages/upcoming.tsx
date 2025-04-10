@@ -40,25 +40,25 @@ export default function Upcoming() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card>
-                <div className="md:grid md:grid-cols-2 gap-6">
-                  <div className="aspect-[16/9] md:aspect-square relative">
-                    <img
-                      src={release.imageUrl}
-                      alt={release.title}
-                      className="object-cover w-full h-full rounded-t-lg md:rounded-l-lg md:rounded-t-none"
-                    />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">{release.title}</CardTitle>
+              <Card className="overflow-hidden">
+                <div className="p-8 flex flex-col lg:flex-row gap-10">
+                  <div className="lg:w-1/3 flex flex-col items-center">
+                    <div className="relative overflow-hidden rounded-lg shadow-2xl w-full max-w-sm mb-6">
+                      <img
+                        src={release.imageUrl}
+                        alt={release.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
                     <div className="flex items-center text-muted-foreground mt-2">
                       <Calendar className="w-4 h-4 mr-2" />
                       {release.date}
                     </div>
-                    <CardContent className="px-0">
-                      <p className="text-muted-foreground">{release.description}</p>
-                    </CardContent>
-                  </CardHeader>
+                  </div>
+                  <div className="lg:w-2/3">
+                    <h1 className="text-3xl md:text-4xl font-serif mb-2">{release.title}</h1>
+                    <p className="text-muted-foreground mt-6">{release.description}</p>
+                  </div>
                 </div>
               </Card>
             </motion.div>

@@ -6,7 +6,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,11 +32,11 @@ const Gallery: React.FC = () => {
   // Funkcja do nawigacji między obrazami w trybie pełnoekranowym
   const navigateImage = (direction: 'prev' | 'next') => {
     if (selectedImage === null) return;
-    
+
     const newIndex = direction === 'next'
       ? (selectedImage + 1) % galleryImages.length
       : (selectedImage - 1 + galleryImages.length) % galleryImages.length;
-    
+
     setSelectedImage(newIndex);
   };
 
@@ -44,7 +44,7 @@ const Gallery: React.FC = () => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedImage === null) return;
-      
+
       if (e.key === 'ArrowRight') {
         navigateImage('next');
       } else if (e.key === 'ArrowLeft') {
@@ -53,7 +53,7 @@ const Gallery: React.FC = () => {
         setSelectedImage(null);
       }
     };
-    
+
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedImage]);
@@ -68,7 +68,7 @@ const Gallery: React.FC = () => {
         Odkryj magiczne miejsca, krajobrazy i motywy, które inspirują mnie podczas pisania.
         Każde zdjęcie opowiada swoją własną historię i ukazuje kawałek mojego świata wyobraźni.
       </p>
-      
+
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         variants={containerVariants}
@@ -87,29 +87,26 @@ const Gallery: React.FC = () => {
 
       {/* Pełnoekranowy widok galerii */}
       {selectedImage !== null && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative w-full h-full flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
+        <Dialog open>
+          <DialogContent className="relative w-full h-full flex items-center justify-center p-4" >
             <img 
               src={galleryImages[selectedImage].src} 
               alt={galleryImages[selectedImage].alt} 
               className="object-contain max-h-[85vh] max-w-[90vw]"
             />
-            
+
             <button
               className="absolute top-4 right-4 bg-primary text-white p-2 rounded-full shadow-xl"
               onClick={() => setSelectedImage(null)}
             >
               <X size={24} />
             </button>
-            
+
             <div className="absolute inset-x-0 bottom-8 text-center text-white bg-gradient-to-t from-black/60 to-transparent py-8 px-4">
               <h2 className="text-2xl font-cinzel mb-2">{galleryImages[selectedImage].title}</h2>
               <p className="text-base font-cinzel">{galleryImages[selectedImage].description}</p>
             </div>
-            
+
             {/* Przyciski nawigacji */}
             <button 
               className="absolute left-4 top-1/2 -translate-y-1/2 bg-gradient-button text-white p-3 rounded-full shadow-xl"
@@ -120,7 +117,7 @@ const Gallery: React.FC = () => {
             >
               <ChevronLeft size={30} />
             </button>
-            
+
             <button 
               className="absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-button text-white p-3 rounded-full shadow-xl"
               onClick={(e) => {
@@ -130,8 +127,8 @@ const Gallery: React.FC = () => {
             >
               <ChevronRight size={30} />
             </button>
-          </div>
-        </div>
+          </DialogContent>
+        </Dialog>
       )}
     </div>
   );
@@ -149,7 +146,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
 
   useEffect(() => {
     if (!ref.current) return;
-    
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -159,9 +156,9 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
       },
       { threshold: 0.2 }
     );
-    
+
     observer.observe(ref.current);
-    
+
     return () => {
       if (ref.current) {
         observer.unobserve(ref.current);
@@ -183,13 +180,13 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
           alt={image.alt}
           className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
         />
-        
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
           <div className="p-4 w-full">
             <h3 className="text-white text-lg font-semibold">{image.title}</h3>
           </div>
         </div>
-        
+
         <button
           onClick={onSelect}
           className="absolute top-3 right-3 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
@@ -198,7 +195,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
           <ZoomIn size={18} />
         </button>
       </div>
-      
+
       <div className="p-4 bg-gradient-highlight text-primary-foreground">
         <h3 className="font-cinzel text-lg mb-2">{image.title}</h3>
         <p className="text-primary-foreground/80 text-sm line-clamp-2 font-cinzel">{image.description}</p>
