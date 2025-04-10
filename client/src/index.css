@@ -26,13 +26,17 @@ button, .btn, a, nav, .nav-link, .font-bold {
   z-index: -10;
 }
 
-/* New gradient colors */
+/* Nowe kolory gradientu niebiesko-srebrnego */
 :root {
   --gradient-mystical: linear-gradient(135deg, #0052D4 0%, #C0C0C0 100%);
+  --gradient-highlight: linear-gradient(to right, #4a9dff, #b9d3ff);
+  --gradient-button: linear-gradient(to right, #2a71c3, #5c9fe1);
 }
 
 .dark {
   --gradient-mystical: linear-gradient(135deg, #003785 0%, #808080 100%);
+  --gradient-highlight: linear-gradient(to right, #1e6ab5, #9abdf8);
+  --gradient-button: linear-gradient(to right, #204f75, #4b7cad);
 }
 
 @layer base {

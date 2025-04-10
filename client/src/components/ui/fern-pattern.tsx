@@ -12,42 +12,43 @@ export function FernPattern() {
           height="200"
           patternUnits="userSpaceOnUse"
         >
-          {/* Główny liść paproci */}
+          {/* Główny wzór gwiazd */}
           <path
-            d="M100 0C100 0 90 20 80 30C70 40 50 50 40 70C30 90 30 110 40 130C50 150 70 160 80 170C90 180 100 200 100 200"
-            stroke="currentColor"
-            fill="none"
-            strokeWidth="2"
-            className="transform -rotate-45"
-          />
-          {/* Boczne listki */}
-          <path
-            d="M60 60C60 60 50 70 40 80C30 90 20 100 20 120C20 140 30 150 40 160C50 170 60 180 60 180"
+            d="M100 0 L105 15 L120 15 L110 25 L115 40 L100 30 L85 40 L90 25 L80 15 L95 15 Z"
             stroke="currentColor"
             fill="none"
             strokeWidth="1"
-            className="transform rotate-90"
+            className="text-primary"
           />
+          
+          {/* Mniejsze gwiazdy */}
           <path
-            d="M140 60C140 60 150 70 160 80C170 90 180 100 180 120C180 140 170 150 160 160C150 170 140 180 140 180"
+            d="M50 50 L52 58 L60 58 L55 62 L57 70 L50 65 L43 70 L45 62 L40 58 L48 58 Z"
             stroke="currentColor"
             fill="none"
-            strokeWidth="1"
-            className="transform -rotate-90"
+            strokeWidth="0.8"
+            className="text-primary/80"
           />
-          {/* Dekoracyjne spirale */}
+          
           <path
-            d="M80 80C80 80 85 85 85 90C85 95 80 100 75 100"
+            d="M150 150 L152 158 L160 158 L155 162 L157 170 L150 165 L143 170 L145 162 L140 158 L148 158 Z"
             stroke="currentColor"
             fill="none"
-            strokeWidth="0.5"
+            strokeWidth="0.8"
+            className="text-primary/80"
           />
-          <path
-            d="M120 120C120 120 125 125 125 130C125 135 120 140 115 140"
-            stroke="currentColor"
-            fill="none"
-            strokeWidth="0.5"
-          />
+          
+          {/* Najdrobniejsze punkty gwiazd */}
+          <circle cx="25" cy="25" r="1" fill="currentColor" className="text-primary/60" />
+          <circle cx="175" cy="75" r="1" fill="currentColor" className="text-primary/60" />
+          <circle cx="75" cy="175" r="1" fill="currentColor" className="text-primary/60" />
+          <circle cx="175" cy="175" r="1" fill="currentColor" className="text-primary/60" />
+          
+          {/* Drobne linie - promienie */}
+          <line x1="80" y1="80" x2="85" y2="85" stroke="currentColor" strokeWidth="0.5" className="text-primary/40" />
+          <line x1="120" y1="120" x2="125" y2="125" stroke="currentColor" strokeWidth="0.5" className="text-primary/40" />
+          <line x1="40" y1="160" x2="45" y2="165" stroke="currentColor" strokeWidth="0.5" className="text-primary/40" />
+          <line x1="160" y1="40" x2="165" y2="45" stroke="currentColor" strokeWidth="0.5" className="text-primary/40" />
         </pattern>
         <rect width="100%" height="100%" fill="url(#fern-pattern)" />
       </svg>
