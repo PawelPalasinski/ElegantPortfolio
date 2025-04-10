@@ -30,6 +30,7 @@ const upcomingBooks = [
 
 export default function Books() {
   const [showUpcoming, setShowUpcoming] = useState(false);
+  const [showFullImage, setShowFullImage] = useState(false);
 
   return (
     <div className="min-h-screen py-16 relative overflow-hidden">
@@ -97,7 +98,10 @@ export default function Books() {
                   className="p-8 flex flex-col lg:flex-row gap-10 bg-card rounded-lg shadow-lg border border-border mb-8"
                 >
                   <div className="lg:w-1/3 flex flex-col items-center">
-                    <div className="relative overflow-hidden rounded-lg shadow-2xl w-full max-w-sm mb-6">
+                    <div 
+                      className="relative overflow-hidden rounded-lg shadow-2xl w-full max-w-sm mb-6 cursor-pointer"
+                      onClick={() => setShowFullImage(true)}
+                    >
                       <motion.img
                         src={book.imageUrl}
                         alt={book.title}
@@ -106,6 +110,9 @@ export default function Books() {
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end justify-center pb-4">
+                        <span className="text-white text-sm font-bold">Kliknij, aby powiększyć</span>
+                      </div>
                     </div>
                   </div>
                   <div className="lg:w-2/3">
@@ -117,6 +124,35 @@ export default function Books() {
             </div>
           )}
         </motion.div>
+
+        {/* Dialog dla pełnoekranowego podglądu */}
+        <Dialog open={showFullImage} onOpenChange={setShowFullImage}>
+          <DialogContent className="max-w-6xl w-full h-[90vh] bg-black/90 border-none p-0">
+            <div className="relative h-full w-full flex items-center justify-center">
+              <button 
+                onClick={() => setShowFullImage(false)}
+                className="absolute top-4 right-4 bg-black/40 hover:bg-black/60 text-white p-2 rounded-full z-10"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="h-[85vh] max-h-full flex items-center justify-center">
+                <motion.img
+                  src={upcomingBooks[0]?.imageUrl}
+                  alt={upcomingBooks[0]?.title}
+                  className="max-h-full max-w-full object-contain"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
+              
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6">
+                <h2 className="text-2xl font-serif text-white">{upcomingBooks[0]?.title}</h2>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
