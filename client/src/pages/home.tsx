@@ -8,7 +8,7 @@ export default function Home() {
     <div className="min-h-[calc(100vh-4rem)]">
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-4rem)] flex items-center">
-        <div 
+        <div
           className="fixed inset-0 bottom-0 z-0"
           style={{
             backgroundImage: "url('/images/background-main.jpg')",
@@ -26,7 +26,7 @@ export default function Home() {
             className="max-w-3xl"
           >
             <AnimatedText
-              text="Marcels Palas"
+              text="Marcela Palas"
               className="text-5xl md:text-7xl font-bold mb-6"
             />
             <AnimatedText

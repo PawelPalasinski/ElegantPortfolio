@@ -5,7 +5,7 @@ import { Logo } from "@/components/ui/logo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="border-t mt-24 py-12 relative z-10">
       <div className="container mx-auto px-4">
@@ -17,11 +17,12 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
-              Oficjalna strona Marceli Palas, autorki książek fantasy i powieści młodzieżowych.
-              Odkryj magiczne światy stworzone piórem pisarki z Krakowa.
+              Oficjalna strona Marceli Palas, autorki książek fantasy i powieści
+              młodzieżowych. Odkryj magiczne światy stworzone piórem pisarki z
+              Krakowa.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 gap-x-16 gap-y-8">
             <div className="space-y-4">
               <h3 className="text-lg font-bold mb-4">Nawigacja</h3>
@@ -56,13 +57,13 @@ export function Footer() {
                 </li>
               </ul>
             </div>
-            
+
             <div className="space-y-4">
               <h3 className="text-lg font-bold mb-4">Kontakt</h3>
               <ul className="space-y-2">
                 <li className="text-muted-foreground">
-                  <a 
-                    href="mailto:m.piorun@example.com" 
+                  <a
+                    href="mailto:m.piorun@example.com"
                     className="hover:text-primary transition-colors"
                   >
                     m.palas@example.com
@@ -79,20 +80,20 @@ export function Footer() {
                   </a>
                 </li> */}
                 <li>
-                  <a 
-                    href="https://facebook.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     Facebook
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://tiktok.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://tiktok.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     TikTok
@@ -102,13 +103,13 @@ export function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} Marcela Palas. Wszelkie prawa zastrzeżone.
           </p>
           <p className="text-sm text-muted-foreground mt-4 md:mt-0 flex items-center">
-            Strona stworzona z <Heart className="h-4 w-4 mx-1 text-red-500 fill-red-500" /> przez Paweł Pałasinski
+            © 2026 Paweł Pałasinski
           </p>
         </div>
       </div>
