@@ -87,46 +87,52 @@ const Gallery: React.FC = () => {
 
       {/* Pełnoekranowy widok galerii */}
       {selectedImage !== null && (
-        <Dialog open>
-          <DialogContent className="relative w-full h-full flex items-center justify-center p-4" >
-            <img 
-              src={galleryImages[selectedImage].src} 
-              alt={galleryImages[selectedImage].alt} 
-              className="object-contain max-h-[85vh] max-w-[90vw]"
-            />
+        <Dialog open onOpenChange={(open) => !open && setSelectedImage(null)}>
+          <DialogContent className="max-w-7xl border-none bg-transparent shadow-none p-0 flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center" onClick={() => setSelectedImage(null)}>
+              <img 
+                src={galleryImages[selectedImage].src} 
+                alt={galleryImages[selectedImage].alt} 
+                className="object-contain max-h-[90vh] max-w-[90vw] cursor-default"
+                onClick={(e) => e.stopPropagation()}
+              />
 
-            <button
-              className="absolute top-4 right-4 bg-primary text-white p-2 rounded-full shadow-xl"
-              onClick={() => setSelectedImage(null)}
-            >
-              <X size={24} />
-            </button>
+              <button
+                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-50"
+                onClick={() => setSelectedImage(null)}
+              >
+                <X size={24} />
+              </button>
 
-            <div className="absolute inset-x-0 bottom-8 text-center text-white bg-gradient-to-t from-black/60 to-transparent py-8 px-4">
-              <h2 className="text-2xl font-cinzel mb-2">{galleryImages[selectedImage].title}</h2>
-              <p className="text-base font-cinzel">{galleryImages[selectedImage].description}</p>
+              <div 
+                className="absolute inset-x-0 bottom-0 text-center text-white bg-black/60 py-6 px-4 cursor-default"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <h2 className="text-2xl font-cinzel mb-1">{galleryImages[selectedImage].title}</h2>
+                <p className="text-base font-cinzel opacity-90">{galleryImages[selectedImage].description}</p>
+              </div>
+
+              {/* Przyciski nawigacji */}
+              <button 
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition-colors z-50"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImage('prev');
+                }}
+              >
+                <ChevronLeft size={30} />
+              </button>
+
+              <button 
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition-colors z-50"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateImage('next');
+                }}
+              >
+                <ChevronRight size={30} />
+              </button>
             </div>
-
-            {/* Przyciski nawigacji */}
-            <button 
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-gradient-button text-white p-3 rounded-full shadow-xl"
-              onClick={(e) => {
-                e.stopPropagation();
-                navigateImage('prev');
-              }}
-            >
-              <ChevronLeft size={30} />
-            </button>
-
-            <button 
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-gradient-button text-white p-3 rounded-full shadow-xl"
-              onClick={(e) => {
-                e.stopPropagation();
-                navigateImage('next');
-              }}
-            >
-              <ChevronRight size={30} />
-            </button>
           </DialogContent>
         </Dialog>
       )}
