@@ -183,7 +183,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ image, onSelect }) => {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
           <div className="p-4 w-full">
-            <h3 className="text-white text-lg font-semibold">{image.title}</h3>
+             <h3 className="text-white text-lg font-semibold">{image.title}</h3>
           </div>
         </div>
 

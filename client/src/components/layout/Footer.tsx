@@ -17,7 +17,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
-              Oficjalna strona Magdaleny Piorun, autorki książek fantasy i powieści młodzieżowych.
+              Oficjalna strona Marceli Palas, autorki książek fantasy i powieści młodzieżowych.
               Odkryj magiczne światy stworzone piórem pisarki z Krakowa.
             </p>
           </div>
@@ -65,10 +65,10 @@ export function Footer() {
                     href="mailto:m.piorun@example.com" 
                     className="hover:text-primary transition-colors"
                   >
-                    m.piorun@example.com
+                    m.palas@example.com
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a 
                     href="https://instagram.com" 
                     target="_blank" 
@@ -77,7 +77,7 @@ export function Footer() {
                   >
                     Instagram
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a 
                     href="https://facebook.com" 
@@ -105,10 +105,10 @@ export function Footer() {
         
         <div className="border-t mt-12 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} Magdalena Piorun. Wszelkie prawa zastrzeżone.
+            &copy; {currentYear} Marcela Palas. Wszelkie prawa zastrzeżone.
           </p>
           <p className="text-sm text-muted-foreground mt-4 md:mt-0 flex items-center">
-            Strona stworzona z <Heart className="h-4 w-4 mx-1 text-red-500 fill-red-500" /> przez MoonTech Studio
+            Strona stworzona z <Heart className="h-4 w-4 mx-1 text-red-500 fill-red-500" /> przez Paweł Pałasinski
           </p>
         </div>
       </div>

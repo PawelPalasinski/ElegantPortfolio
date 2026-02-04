@@ -25,6 +25,7 @@ const currentBook = {
 const upcomingBooks = [
   {
     title: "Róże z piasku",
+    author: "Marcela Pałas",
     description: "PEŁNA SPISKÓW I DWORSKICH INTRYG PRZYGODA INSPIROWANA BAŚNIĄ O LAMPIE ALADYNA. Torlaf Ashen zostaje zaręczony z córką władcy Tis-Ahany, księżniczką Alyasmin. By poznać przyszłą małżonkę wyrusza do Fatan, spalonej słońcem stolicy piaszczystej krainy. Tam, w otoczeniu dworskich spisków i nieprzychylnych mu intrygantów, musi zmierzyć się nie tylko z własnym przeznaczeniem, ale i dawno zapomnianą przepowiednią. A wszystko skomplikuje się jeszcze bardziej, gdy na drodze staną mu przewodząca rebelii zamaskowana złodziejka i…jego własny bliźniak. Arien Ashen ucieka od własnego losu, odpowiedzialności i wyrzutów sumienia. Gonią go własne demony, a do przodu pcha go tylko jedno… zemsta. Gdy dociera do Tis-Ahany bez zastanowienia dołącza do Kolców, złodzeji, którzy wypowiedzieli niepisaną wojnę wezyrowi Al-Jafiemu. Nie ma nic do stracenia, a wiele do zyskania, szczególnie, gdy do jego rąk trafi spełniająca życzenia lampa…",
     imageUrl: "/images/book-upcoming-1.jpg"
   }
